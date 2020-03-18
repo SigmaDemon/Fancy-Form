@@ -114,6 +114,9 @@ function inputPass() {
   setTimeout(transform, shakeTime * 0, 0, 10);
   setTimeout(transform, shakeTime * 1, 0, 0);
 
+  // Store Answers into the Array
+  questions[position].answer = inputField.value;
+
   // Increment Position
   position++;
 
@@ -134,11 +137,12 @@ function inputPass() {
 
 // All Fields are Complete - Once the form is complete, the 'h1' heading will be displayed on the screen
 function formComplete() {
+  console.log(questions);
   const h1 = document.createElement('h1');
   h1.classList.add('end');
   h1.appendChild(
     document.createTextNode(
-      `Thanks ${questions[0].answer} You have registered successfully and will receive an email shortly!`
+      `Thanks ${questions[0].answer} - You have registered successfully and will receive an email shortly!`
     )
   );
   setTimeout(() => {
