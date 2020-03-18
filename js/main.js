@@ -18,14 +18,14 @@ const switchTime = 200; // Transition between questions
 let position = 0;
 
 // Init DOM Elements
-const formBox = document.getElementById('#form-box');
-const nextBtn = document.getElementById('#next-btn');
-const prevBtn = document.getElementById('#prev-btn');
-const inputGroup = document.getElementById('#input-group');
-const inputField = document.getElementById('#input-field');
-const inputLabel = document.getElementById('#input-label');
-const inputProgress = document.getElementById('#input-progress');
-const progress = document.getElementById('#progress-bar');
+const formBox = document.querySelector('#form-box');
+const nextBtn = document.querySelector('#next-btn');
+const prevBtn = document.querySelector('#prev-btn');
+const inputGroup = document.querySelector('#input-group');
+const inputField = document.querySelector('#input-field');
+const inputLabel = document.querySelector('#input-label');
+const inputProgress = document.querySelector('#input-progress');
+const progress = document.querySelector('#progress-bar');
 
 // Events
 document.addEventListener('DOMContentLoaded', getQuestion);
@@ -50,5 +50,5 @@ function getQuestion() {
   progress.style.width = (position * 100) / questions.length + '%';
 
   // Add User Icon OR Back Arrow Depending on Question
-  prevBtn.className = position ? 'fa fa-arrow-left' : 'fa fa-user';
+  prevBtn.className = position ? 'fas fa-arrow-left' : 'fas fa-user';
 }
