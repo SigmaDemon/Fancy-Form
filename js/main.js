@@ -1,7 +1,4 @@
 // Questions Array
-
-import { types } from 'node-sass';
-
 // The email has been validated using the regular expression for ts pattern
 const questions = [
   { question: 'Please enter your First Name' },
@@ -50,5 +47,5 @@ function getQuestion() {
   progress.style.width = (position * 100) / questions.length + '%';
 
   // Add User Icon OR Back Arrow Depending on Question
-  prevBtn.className = position ? 'fas fa-arrow-left' : 'fas fa-user';
+  prevBtn.className = position ? 'fa fa-arrow-left' : 'fa fa-user';
 }
