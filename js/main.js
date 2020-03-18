@@ -76,6 +76,7 @@ function hideQuestion() {
 
 // Transform to Create Shake Motion
 function transform(x, y) {
+  console.log(x, y);
   formBox.style.transform = `translate(${x}px, ${y}px)`;
 }
 
@@ -101,4 +102,25 @@ function inputFail() {
 }
 
 // Field Input Pass
-function inputPass() {}
+function inputPass() {
+  formBox.className = '';
+  setTimeout(transform, shakeTime * 0, 0, 10);
+  setTimeout(transform, shakeTime * 1, 0, 0);
+
+  // Increment Position
+  position++;
+
+  // If New Question, Hide Current and Get Next
+  if (questions[position]) {
+    hideQuestion();
+    getQuestion();
+  } else {
+    // Remove if no more questions
+    hideQuestion();
+    formBox.className = 'close';
+    progress.style.width = '100%';
+
+    // Form Complete
+    formComplete();
+  }
+}
