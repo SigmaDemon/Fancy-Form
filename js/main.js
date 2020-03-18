@@ -93,8 +93,10 @@ function validate() {
 function inputFail() {
   formBox.className = 'error';
   // Repeat Shake Motion - Set i to number of shakes
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 4; i++) {
     setTimeout(transform, shakeTime * i, ((i % 2) * 2 - 1) * 20, 0);
+    setTimeout(transform, shakeTime * 4, 0, 0);
+    inputField.focus();
   }
 }
 
