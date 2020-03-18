@@ -43,4 +43,12 @@ function getQuestion() {
   // Get Current Answer
   inputField.value = questions[position].answer || '';
 
+  // Focus On Element
+  inputField.focus();
+
+  // Set Progress Bar Width - Variable to the questions length
+  progress.style.width = (position * 100) / questions.length + '%';
+
+  // Add User Icon OR Back Arrow Depending on Question
+  prevBtn.className = position ? 'fa fa-arrow-left' : 'fa fa-user';
 }
