@@ -32,6 +32,13 @@ document.addEventListener('DOMContentLoaded', getQuestion);
 // Next Button Click
 nextBtn.addEventListener('click', validate);
 
+// Input Field Enter Click
+inputField.addEventListener('keyup', e => {
+  if (e.keyCode == 13) {
+    validate();
+  }
+});
+
 // Functions
 
 // Get Question from Array & Add to Markup
@@ -123,4 +130,19 @@ function inputPass() {
     // Form Complete
     formComplete();
   }
+}
+
+// All Fields are Complete - Once the form is complete, the 'h1' heading will be displayed on the screen
+function formComplete() {
+  const h1 = document.createElement('h1');
+  h1.addClass('end');
+  h1.appendChild(
+    document.createTextNode(
+      `Thanks ${question[0].answer} You have registered successfully and will receive an email shortly!`
+    )
+  );
+  setTimeout(() => {
+    formBox.parentElement.appendChild(h1);
+    setTimeout(() => (h1.style.opacity = 1), 50);
+  }, 1000);
 }
